@@ -1,3 +1,3 @@
-variable "data_lake_name" {
+variable "s3_data_lake_name" {
   type = string
 }

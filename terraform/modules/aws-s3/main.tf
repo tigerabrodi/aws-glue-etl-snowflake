@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "data_lake" {
-  bucket = var.data_lake_name
+  bucket = var.s3_data_lake_name
 
   lifecycle {
     prevent_destroy = false
