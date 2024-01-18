@@ -33,11 +33,8 @@ module "aws_permissions" {
 }
 
 module "glue-database" {
-  source                           = "./modules/aws-glue-database"
-  s3_data_lake_name                = var.s3_data_lake_name
-  s3_data_lake_customers_file_name = var.s3_data_lake_customers_file_name
-  aws_glue_catalog_table           = var.aws_glue_catalog_table
-  aws_glue_database_name           = var.aws_glue_database_name
+  source                 = "./modules/aws-glue-database"
+  aws_glue_database_name = var.aws_glue_database_name
 }
 
 module "glue-crawler" {
@@ -46,4 +43,5 @@ module "glue-crawler" {
   s3_data_lake_name                = var.s3_data_lake_name
   s3_data_lake_customers_file_name = var.s3_data_lake_customers_file_name
   aws_glue_database_name           = var.aws_glue_database_name
+  s3_raw_data_folder               = var.s3_raw_data_folder
 }

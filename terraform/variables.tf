@@ -13,3 +13,7 @@ variable "aws_glue_catalog_table" {
 variable "aws_glue_database_name" {
   type = string
 }
+
+variable "s3_raw_data_folder" {
+  type = string
+}
