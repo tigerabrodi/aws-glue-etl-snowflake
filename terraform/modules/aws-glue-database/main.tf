@@ -1,5 +1,5 @@
 resource "aws_glue_catalog_database" "customers_database" {
-  name = "customers_database"
+  name = var.aws_glue_database_name
 }
 
 resource "aws_glue_catalog_table" "customers_table" {
@@ -9,7 +9,7 @@ resource "aws_glue_catalog_table" "customers_table" {
   table_type = "EXTERNAL_TABLE" # indicates that data is stored outside of AWS Glue
 
   storage_descriptor {
-    location = "s3://${var.data_lake_name}/${var.data_lake_folder}"
+    location = "s3://${var.s3_data_lake_name}/${var.s3_data_lake_customers_file_name}"
 
     # Hadoops classes, standard for processing text files like CSV in big data environments
     input_format  = "org.apache.hadoop.mapred.TextInputFormat"
