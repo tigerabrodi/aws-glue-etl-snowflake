@@ -6,8 +6,8 @@ resource "aws_s3_bucket" "data_lake" {
   }
 
   tags = {
-    Name    = "MyProject Customers Data"
-    Project = "MyProject"
+    Name    = "Data Lake Bucket"
+    Project = "Data Lake"
   }
 }
 
