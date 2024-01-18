@@ -22,8 +22,8 @@ provider "aws" {
 }
 
 module "s3" {
-  source         = "./modules/aws-s3"
-  data_lake_name = var.data_lake_name
+  source            = "./modules/aws-s3"
+  s3_data_lake_name = var.s3_data_lake_name
 }
 
 module "aws_permissions" {
@@ -33,8 +33,17 @@ module "aws_permissions" {
 }
 
 module "glue-database" {
-  source                 = "./modules/aws-glue-database"
-  data_lake_name         = var.data_lake_name
-  data_lake_folder       = var.data_lake_folder
-  aws_glue_catalog_table = var.aws_glue_catalog_table
+  source                           = "./modules/aws-glue-database"
+  s3_data_lake_name                = var.s3_data_lake_name
+  s3_data_lake_customers_file_name = var.s3_data_lake_customers_file_name
+  aws_glue_catalog_table           = var.aws_glue_catalog_table
+  aws_glue_database_name           = var.aws_glue_database_name
+}
+
+module "glue-crawler" {
+  source                           = "./modules/aws-glue-crawler"
+  glue_service_role_arn            = module.aws_permissions.glue_service_role_arn
+  s3_data_lake_name                = var.s3_data_lake_name
+  s3_data_lake_customers_file_name = var.s3_data_lake_customers_file_name
+  aws_glue_database_name           = var.aws_glue_database_name
 }
