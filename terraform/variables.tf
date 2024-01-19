@@ -17,3 +17,7 @@ variable "aws_glue_database_name" {
 variable "s3_raw_data_folder" {
   type = string
 }
+
+variable "s3_transformed_data_folder" {
+  type = string
+}
