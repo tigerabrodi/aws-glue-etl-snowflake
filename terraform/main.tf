@@ -1,9 +1,9 @@
 terraform {
 
   cloud {
-    organization = "tiger_projects"
+    organization = "{your-organization}"
     workspaces {
-      name = "aws-etl-snowflake"
+      name = "{your-workspace}"
     }
   }
 
