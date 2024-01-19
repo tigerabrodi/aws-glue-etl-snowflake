@@ -89,10 +89,22 @@ But it kept failing, and it gave a [generic error message](https://github.com/Sn
 
 Honestly, I started to feel hopeless. 😂
 
-Like the error message is generic and I'm literally doing what the docs tells me to.
+Like the error message is generic, and I'm literally doing what the docs tell me to.
 
 And then I found this [workaround](https://github.com/Snowflake-Labs/terraform-provider-snowflake/issues/265#issuecomment-736864158).
 
 We gotta do it this way when specifying the format of file: `file_format = "TYPE = JSON"`
 
 So relieved. 😮‍💨
+
+# How could this be improved?
+
+This is what you would typically call Batch Processing.
+
+Not data that gets sent in real-time, but rather done in a schedule.
+
+So, how could I improve this project?
+
+In a realistic scenario, you would want to configure the [Glue job in terraform too](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/glue_job). This would likely run on a schedule.
+
+When configuring the Glue Job, you can point to a script as well. So we'd include the scripting there. This involves the post-script once the job is done that turns the transformed path into `customers.json`.
