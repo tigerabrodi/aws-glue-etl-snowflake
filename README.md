@@ -93,4 +93,6 @@ Like the error message is generic and I'm literally doing what the docs tells me
 
 And then I found this [workaround](https://github.com/Snowflake-Labs/terraform-provider-snowflake/issues/265#issuecomment-736864158).
 
+We gotta do it this way when specifying the format of file: `file_format = "TYPE = JSON"`
+
 So relieved. 😮‍💨
