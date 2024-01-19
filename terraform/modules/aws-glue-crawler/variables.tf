@@ -1,7 +1,3 @@
-variable "glue_service_role_arn" {
-  type = string
-}
-
 variable "s3_data_lake_name" {
   type = string
 }
@@ -19,8 +15,6 @@ variable "s3_raw_data_folder" {
 
 }
 
-variable "data_lake_s3" {
-  type = object({
-    arn = string
-  })
+variable "data_lake_s3_arn" {
+  type = string
 }
