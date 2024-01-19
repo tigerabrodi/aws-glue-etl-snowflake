@@ -18,3 +18,9 @@ variable "s3_raw_data_folder" {
   type = string
 
 }
+
+variable "data_lake_s3" {
+  type = object({
+    arn = string
+  })
+}

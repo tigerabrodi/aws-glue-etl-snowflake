@@ -29,7 +29,7 @@ module "s3" {
 module "aws_permissions" {
   source = "./modules/aws-permissions"
 
-  data_lake_s3_arn = module.s3.data_lake_s3_arn
+  data_lake_s3_arn = module.s3.data_lake_s3.arn
 }
 
 module "glue-database" {
@@ -44,4 +44,5 @@ module "glue-crawler" {
   s3_data_lake_customers_file_name = var.s3_data_lake_customers_file_name
   aws_glue_database_name           = var.aws_glue_database_name
   s3_raw_data_folder               = var.s3_raw_data_folder
+  data_lake_s3                     = module.s3.data_lake_s3
 }
