@@ -108,3 +108,15 @@ So, how could I improve this project?
 In a realistic scenario, you would want to configure the [Glue job in terraform too](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/glue_job). This would likely run on a schedule.
 
 When configuring the Glue Job, you can point to a script as well. So we'd include the scripting there. This involves the post-script once the job is done that turns the transformed path into `customers.json`.
+
+# Pre study
+
+Before embarking on this project, I did some pre study.
+
+This involved learning more about Snowflake and AWS Glue.
+
+Snowflake's hands on tutorial was amazing.
+
+Concise and practical, I loved it!
+
+Notes: https://github.com/narutosstudent/snowflake-aws-glue-data-notes
