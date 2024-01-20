@@ -109,6 +109,8 @@ In a realistic scenario, you would want to configure the [Glue job in terraform 
 
 When configuring the Glue Job, you can point to a script as well. So we'd include the scripting there. This involves the post-script once the job is done that turns the transformed path into `customers.json`.
 
+We'd probably also not need to configure the AWS Glue Job's advanced properties stuff like I did.
+
 # Pre study
 
 Before embarking on this project, I did some pre study.
